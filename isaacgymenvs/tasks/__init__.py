@@ -46,6 +46,10 @@ from .shadow_hand import ShadowHand
 from .allegro_hand import AllegroHand
 from .dextreme.allegro_hand_dextreme import AllegroHandDextremeManualDR, AllegroHandDextremeADR
 from .trifinger import Trifinger
+from .biped import Biped
+from .hexapod_orient import HexapodOrient
+from .hexapod_test import HexapodTest
+from .hexapod_terrain import HexapodTerrain
 
 from .allegro_kuka.allegro_kuka_reorientation import AllegroKukaReorientation
 from .allegro_kuka.allegro_kuka_regrasping import AllegroKukaRegrasping
@@ -111,4 +115,8 @@ isaacgym_task_map = {
     "Quadcopter": Quadcopter,
     "ShadowHand": ShadowHand,
     "Trifinger": Trifinger,
+    "Biped": Biped,
+    "HexapodOrient": HexapodOrient,
+    "HexapodTest": HexapodTest,
+    "HexapodTerrain": HexapodTerrain,
 }

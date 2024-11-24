@@ -11,6 +11,7 @@ videos
 ._tmptext.txt
 __pycache__/
 /isaacgymenvs/tasks/__pycache__
+/isaacgymenvs/tasks/recorded_frames
 /isaacgymenvs/utils/__pycache__
 /isaacgymenvs/tasks/base/__pycache__
 /tools/format/.lastrun
@@ -31,3 +32,5 @@ runs/
 outputs/
 *.hydra*
 /isaacgymenvs/wandb
+*.png
+*.run

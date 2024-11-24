@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "f1265fee102eea2e04937127",
+    "documentMicroversion": "2d667f2e2f0a9dca46128423",
+    "documentVersion": "85ec7e788b51d66f6241e45d",
+    "elementId": "c573378376782e88fd0c89ed",
+    "fullConfiguration": "default",
+    "id": "MWKDBKNc0jC5v8j05",
+    "isStandardContent": false,
+    "name": "left_femur <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

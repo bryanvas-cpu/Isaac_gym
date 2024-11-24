@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "27b2dd60283b44546a7fa3b4",
+    "documentMicroversion": "ccf86eacf9ef2a0a1b25f153",
+    "documentVersion": "44ff26d98775233e0e6b5398",
+    "elementId": "a732dee3fed6f1d1f2b96df9",
+    "fullConfiguration": "default",
+    "id": "MANl8hh9naUGxYgeB",
+    "isStandardContent": false,
+    "name": "right_tyre <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

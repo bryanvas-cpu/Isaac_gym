@@ -347,7 +347,8 @@ def compute_anymal_reward(
     reset = reset | torch.any(torch.norm(contact_forces[:, knee_indices, :], dim=2) > 1., dim=1)
     time_out = episode_lengths >= max_episode_length - 1  # no terminal reward for time-outs
     reset = reset | time_out
-
+    
+    # print(contact_forces)
     return total_reward.detach(), reset
 
 
@@ -382,5 +383,5 @@ def compute_anymal_observations(root_states,
                      dof_vel*dof_vel_scale,
                      actions
                      ), dim=-1)
-
+    print(actions)
     return obs

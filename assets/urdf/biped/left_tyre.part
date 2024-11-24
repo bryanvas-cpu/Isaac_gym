@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "a9df49512263d7f104697345",
+    "documentMicroversion": "f68193f1f617f9e8f3e12e64",
+    "documentVersion": "1adfc7ff063815b522c014b9",
+    "elementId": "75ecd18c79d717520a895648",
+    "fullConfiguration": "default",
+    "id": "M1TDvEGaMvCZikcrB",
+    "isStandardContent": false,
+    "name": "left_tyre <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

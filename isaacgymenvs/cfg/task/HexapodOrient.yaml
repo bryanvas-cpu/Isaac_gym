@@ -1,0 +1,157 @@
+# used to create the object
+name: HexapodOrient
+
+physics_engine: 'physx'
+
+env:
+  numEnvs: ${resolve_default:4,${...num_envs}}
+  numObservations: 88
+  numActions: 18
+  envSpacing: 1.0  # [m]
+  enableDebugVis: False
+  episodeLength: 100
+
+  plane:
+    staticFriction: 10.0
+    dynamicFriction: 10.0
+    restitution: 0.0
+
+  terrain:
+    terrainType: plane # none, plane, or trimesh
+    staticFriction: 1.0  # [-]
+    dynamicFriction: 1.0  # [-]
+    restitution: 0.0       # [-]
+    # rough terrain only:
+    mapLength: 8.
+    mapWidth: 8.
+    numEnvRows: 8
+    numEnvColumns: 8
+    # tri mesh only:
+    slopeTreshold: 0.5
+
+  baseInitState:
+    pos: [0.0, 0.0, 0.1] # x,y,z [m]
+    rot: [0.0, 0.0, 0.0, 1.0] # x,y,z,w [quat]
+    vLinear: [0.0, 0.0, 0.0]  # x,y,z [m/s]
+    vAngular: [0.0, 0.0, 0.0]  # x,y,z [rad/s]
+
+  randomCommandRanges:
+    # train
+    orient_xyz: [0.2, 0.2]
+    linear_x: [-0.0, 0.0] # min max [m/s]
+    linear_y: [-0.0, 0.0]   # min max [m/s]
+    yaw: [-0.0, 0.0]    # min max [rad/s]
+    commandHeightRange: [0.05, 0.075] #0.05
+
+  control:
+    # PD Drive parameters:
+    stiffness: 80.0  # [N*m/rad]
+    damping: 2.0     # [N*m*s/rad]
+    # action scale: target angle = actionScale * action + defaultAngle
+    actionScale: 0.5
+
+
+  defaultJointAngles:  # = target angles when action = 0.0
+
+    c1: 0
+    c2: 0
+    c3: 0
+    c4: 0
+    c5: 0
+    c6: 0
+
+    f1: 0
+    f2: 0
+    f3: 0
+    f4: 0
+    f5: 0
+    f6: 0
+
+    t1: 0
+    t2: 0
+    t3: 0
+    t4: 0
+    t5: 0
+    t6: 0
+
+  urdfAsset:
+    file: "urdf/hexapod_terrain/urdf/hexapod.urdf"
+    endName: e
+    fixBaseLink: false
+    defaultDofDriveMode: 1 # see GymDofDriveModeFlags (0 is none, 1 is pos tgt, 2 is vel tgt, 4 effort)
+
+  learn:
+    # rewards
+    orientationRewardScale: 5.0
+    linearVelocityXYRewardScale: 0.01
+    angularVelocityZRewardScale: 0.01
+    jointCentralReward: 0.055 # 1/18
+    distanceRewardScale: 1.0
+    feetContactRewSacle: 2.0
+    
+
+    #costs
+    linearVelocityzRewardCost: -0.01
+    angularVelocityXYRewardCost: -0.01
+    torqueRewardCost: -0.0000025 # -0.000025
+    legCollisionRewardCost: -10.0
+    heightRewardCost: -1.0
+    jointAccelerationRewardCost: -0.0001
+    feetAirTimeRewardCost:  -1.125    
+
+    # normalization
+    linearVelocityScale: 2.0
+    angularVelocityScale: 3.14
+    dofPositionScale: 2.0944
+    dofVelocityScale: 4.71
+    torqueScale: 2.9419
+
+    # noise 
+    addNoise: true
+    noiseLevel: 1.0 # scales other values
+    dofPositionNoise: 0.01
+    dofVelocityNoise: 1.5
+    dofTorqueNoise: 2.0
+    linearVelocityNoise: 0.1
+    angularVelocityNoise: 0.2
+    orientationNoise: 1.0
+
+    #randomization
+    # randomizeFriction: true
+    # frictionRange: [0.5, 1.25]
+    # pushRobots: true
+    # pushInterval_s: 15
+
+  # viewer cam:
+  viewer:
+    refEnv: 0
+    pos: [0, 0, 0.1]  # [m]
+    lookat: [1., 1, 0.1]  # [m]
+
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: False
+
+sim:
+  dt: 0.005
+  substeps: 5
+  up_axis: "z"
+  use_gpu_pipeline: ${eq:${...pipeline},"gpu"}
+  gravity: [0.0, 0.0, -9.81]
+  physx:
+    num_threads: ${....num_threads}
+    solver_type: ${....solver_type}
+    use_gpu: ${contains:"cuda",${....sim_device}} # set to False to run on CPU
+    num_position_iterations: 4
+    num_velocity_iterations: 1
+    contact_offset: 0.02
+    rest_offset: 0.0
+    bounce_threshold_velocity: 0.2
+    max_depenetration_velocity: 100.0
+    default_buffer_size_multiplier: 5.0
+    max_gpu_contact_pairs: 8388608 # 8*1024*1024
+    num_subscenes: ${....num_subscenes}
+    contact_collection: 1 # 0: CC_NEVER (don't collect contact info), 1: CC_LAST_SUBSTEP (collect only contacts on last substep), 2: CC_ALL_SUBSTEPS (broken - do not use!)
+
+task:
+  randomize: False

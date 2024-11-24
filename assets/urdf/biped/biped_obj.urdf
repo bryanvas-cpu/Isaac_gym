@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<robot name="biped">
+    <link name="torso">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/torso.obj"/>
+            </geometry>
+            <material name="torso_material">
+                <color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/torso.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.16499999816578850287 0.027145333083100121191 1.1397137081604502562" rpy="0 0 0"/>
+            <mass value="43.138120115070030636" />
+            <inertia ixx="1.0448465166717080255" ixy="-4.1170359315204493975e-08"  ixz="9.2827025673304821543e-08" iyy="1.5471078468073025114" iyz="-0.020804212152586733925" izz="0.64491215776618904254" />
+        </inertial>
+    </link>
+    <link name="left_coxa">
+        <visual>
+            <origin xyz="-0.31500000000000000222 -0.83446521314972998962 0.04442423553262969671" rpy="-1.570796326794896558 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/left_coxa.obj"/>
+            </geometry>
+            <material name="left_coxa_material">
+                <color rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.31500000000000000222 -0.83446521314972998962 0.04442423553262969671" rpy="-1.570796326794896558 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/left_coxa.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0 -0.090818300238879601238 0.01636466880797040474" rpy="0 0 0"/>
+            <mass value="1.156123696609517415" />
+            <inertia ixx="0.0063095952447390973514" ixy="0"  ixz="0" iyy="0.0029985481606530435712" iyz="0.0015427683188057430066" izz="0.0059689235358662932895" />
+        </inertial>
+    </link>
+    <link name="left_femur">
+        <visual>
+            <origin xyz="-0.10942423553262999036 0.70446521314972998518 -0.9738230000000001052" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_femur.obj"/>
+            </geometry>
+            <material name="left_femur_material">
+                <color rgba="0.54117647058823525885 0.68235294117647060652 0.83921568627450982003 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.10942423553262999036 0.70446521314972998518 -0.9738230000000001052" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_femur.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.12971287551139976113 0.15223047101712061657 -0.019999953319697505449" rpy="0 0 0"/>
+            <mass value="4.1258994250157607908" />
+            <inertia ixx="0.048048495197180719762" ixy="0.032652119805037474465"  ixz="7.0249969158766291046e-09" iyy="0.037549187361512623151" iyz="1.3861588783688298931e-09" izz="0.08392201136951737972" />
+        </inertial>
+    </link>
+    <link name="right_tibia">
+        <visual>
+            <origin xyz="0.24999999999999997224 -0.4000000000000000222 0.039999999999999980016" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_tibia.obj"/>
+            </geometry>
+            <material name="right_tibia_material">
+                <color rgba="0.08627450980392156743 0.31764705882352939348 0.69019607843137253944 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.24999999999999997224 -0.4000000000000000222 0.039999999999999980016" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_tibia.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.11124579361318227833 -0.25522984039344637219 0.025003719708375362479" rpy="0 0 0"/>
+            <mass value="10.152305268561223173" />
+            <inertia ixx="0.22219984850749741057" ixy="0.021328750435331993163"  ixz="-2.6874935552631969771e-06" iyy="0.097167464113988966101" iyz="4.355005189243083947e-06" izz="0.29991385615329618775" />
+        </inertial>
+    </link>
+    <link name="right_wheel">
+        <visual>
+            <origin xyz="-2.0152712144663962269e-17 0 0" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_wheel.obj"/>
+            </geometry>
+            <material name="right_wheel_material">
+                <color rgba="1 1 1 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-2.0152712144663962269e-17 0 0" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_wheel.obj"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-2.9693691262536401288e-17 0 0" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_tyre.obj"/>
+            </geometry>
+            <material name="right_tyre_material">
+                <color rgba="0 0 0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-2.9693691262536401288e-17 0 0" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_tyre.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-2.2103674099589872178e-17 4.6802179718146496856e-18 -0.01500000000000000118" rpy="0 0 0"/>
+            <mass value="1.9048430624490766405" />
+            <inertia ixx="0.010961434779011845417" ixy="7.7029659710326053719e-35"  ixz="1.0584451485861138735e-35" iyy="0.010961434779011841947" iyz="-7.6596803199766537502e-36" izz="0.021649862121902452294" />
+        </inertial>
+    </link>
+    <joint name="wheel_l" type="continuous">
+        <origin xyz="0.24999999999999705791 -0.3999999999999975242 0.0099999999999998423483" rpy="-3.141592653589793116 1.942890293094124279e-16 2.7755575615628568384e-17" />
+        <parent link="right_tibia" />
+        <child link="right_wheel" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="tibia_l" type="revolute">
+        <origin xyz="-0.25942423553262999869 0.30446521314972996297 0.0050000000000000044409" rpy="3.141592653589793116 1.9428902930940873011e-16 2.7755575615627921271e-17" />
+        <parent link="left_femur" />
+        <child link="right_tibia" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.3089969389957472057" upper="0.52359877559829881566"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="femur_l" type="revolute">
+        <origin xyz="-0.019999999999999962252 -0.13000000000000000444 0.034999999999999920064" rpy="-3.141592653589793116 1.570796326794896558 0" />
+        <parent link="left_coxa" />
+        <child link="left_femur" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.0471975511965976313" upper="1.3089969389957472057"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="coxa_l" type="revolute">
+        <origin xyz="0.31500000000000000222 0.04442423553262969671 0.83446521314972998962" rpy="1.570796326794896558 -0 0" />
+        <parent link="torso" />
+        <child link="left_coxa" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-0.26179938779914940783" upper="1.570796326794896558"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+    <link name="right_coxa">
+        <visual>
+            <origin xyz="-0.31500000000000000222 -0.83446521314972998962 0.04442423553262969671" rpy="-1.570796326794896558 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/right_coxa.obj"/>
+            </geometry>
+            <material name="right_coxa_material">
+                <color rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.31500000000000000222 -0.83446521314972998962 0.04442423553262969671" rpy="-1.570796326794896558 -0 0" />
+            <geometry>
+                <mesh filename="package://biped/right_coxa.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0 -0.090818300238879601238 0.016364668807970401271" rpy="0 0 0"/>
+            <mass value="1.156123696609517193" />
+            <inertia ixx="0.006309595244739096484" ixy="0"  ixz="0" iyy="0.0029985481606530431375" iyz="0.0015427683188057432235" izz="0.0059689235358662932895" />
+        </inertial>
+    </link>
+    <link name="right_femur">
+        <visual>
+            <origin xyz="-0.10942423553262999036 0.70446521314972998518 -0.97382299999999999418" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_femur.obj"/>
+            </geometry>
+            <material name="right_femur_material">
+                <color rgba="0.54117647058823525885 0.68235294117647060652 0.83921568627450982003 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.10942423553262999036 0.70446521314972998518 -0.97382299999999999418" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/right_femur.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.12971287551139976113 0.15223047101712061657 -0.019999953319697394427" rpy="0 0 0"/>
+            <mass value="4.1258994250157599026" />
+            <inertia ixx="0.048048495197180719762" ixy="0.032652119805037474465"  ixz="7.0249969159149168136e-09" iyy="0.037549187361512623151" iyz="1.3861588783966744469e-09" izz="0.08392201136951737972" />
+        </inertial>
+    </link>
+    <link name="left_tibia">
+        <visual>
+            <origin xyz="0.25 -0.4000000000000000222 0.040000000000000000833" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_tibia.obj"/>
+            </geometry>
+            <material name="left_tibia_material">
+                <color rgba="0.08627450980392156743 0.31764705882352939348 0.69019607843137253944 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.25 -0.4000000000000000222 0.040000000000000000833" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_tibia.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.11124579361318234771 -0.25522984039344637219 0.025003719708375376357" rpy="0 0 0"/>
+            <mass value="10.152305268561223173" />
+            <inertia ixx="0.22219984850749738281" ixy="0.021328750435331993163"  ixz="-2.6874935552633807833e-06" iyy="0.097167464113988966101" iyz="4.3550051892444951039e-06" izz="0.29991385615329618775" />
+        </inertial>
+    </link>
+    <link name="left_wheel">
+        <visual>
+            <origin xyz="-2.3709073111369384777e-17 -1.0669082900116168915e-17 -1.2004286453759002195e-15" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_tyre.obj"/>
+            </geometry>
+            <material name="left_tyre_material">
+                <color rgba="0 0 0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-2.3709073111369384777e-17 -1.0669082900116168915e-17 -1.2004286453759002195e-15" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_tyre.obj"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-2.3709073111369384777e-17 -1.0669082900116168915e-17 -1.232595164407830946e-32" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_wheel.obj"/>
+            </geometry>
+            <material name="left_wheel_material">
+                <color rgba="1 1 1 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-2.3709073111369384777e-17 -1.0669082900116168915e-17 -1.232595164407830946e-32" rpy="1.570796326794896558 1.570796326794896558 0" />
+            <geometry>
+                <mesh filename="package://biped/left_wheel.obj"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-2.1564386091417102586e-17 -4.0592049226713965085e-18 -0.015000000000000146896" rpy="0 0 0"/>
+            <mass value="1.9048430624490761964" />
+            <inertia ixx="0.010961434779011913071" ixy="-3.1755918374372323703e-32"  ixz="-4.4112522545066624189e-17" iyy="0.010961434779011769089" iyz="-2.486837219221214507e-31" izz="0.021649862121901730649" />
+        </inertial>
+    </link>
+    <joint name="wheel_r" type="continuous">
+        <origin xyz="0.25 -0.4000000000000000222 0.010000000000000003678" rpy="-3.141592653589793116 6.5503158452882950042e-15 -2.4209276022970736307e-30" />
+        <parent link="left_tibia" />
+        <child link="left_wheel" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="tibia_r" type="revolute">
+        <origin xyz="-0.25942423553262999869 0.30446521314972996297 0.0049999999999999168374" rpy="-3.141592653589793116 -1.0685896612017149451e-15 7.8577941730999485548e-31" />
+        <parent link="right_femur" />
+        <child link="left_tibia" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.3089969389957472057" upper="0.52359877559829881566"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="femur_r" type="revolute">
+        <origin xyz="-0.020000000000000017764 -0.13000000000000000444 0.034999999999999920064" rpy="3.141592653589793116 1.5707963267948961139 0" />
+        <parent link="right_coxa" />
+        <child link="right_femur" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.0471975511965976313" upper="1.3089969389957472057"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+    <joint name="coxa_r" type="revolute">
+        <origin xyz="0.015000000000000013323 0.04442423553262969671 0.83446521314972998962" rpy="1.570796326794896558 -0 0" />
+        <parent link="torso" />
+        <child link="right_coxa" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.570796326794896558" upper="0.26179938779914940783"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+</robot>
